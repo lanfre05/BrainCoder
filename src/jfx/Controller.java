@@ -153,6 +153,7 @@ public class Controller implements Initializable {
     @FXML // Compiling the source code
     synchronized public boolean compile(ActionEvent e) {
 
+        // Searching a way to correctly show the BF program output when the C-made compiler executed
         return false;
 
     }
@@ -160,8 +161,7 @@ public class Controller implements Initializable {
     @FXML // Running the source code
     synchronized public void run(ActionEvent e) {
 
-        String code = "<<+>>";
-        String exePath = "src\\c\\bf.exe";
+        // Searching a way to correctly show the BF program output when the C-made compiler executed
 
     }
 
