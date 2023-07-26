@@ -1,8 +1,9 @@
 # Introduction
 
 Here is a simple and funny desktop application that acts as an Integrated Development Environment for *BrainFuck*.
+BrainCoder is composed by a JavaFX GUI application and a C program which is arranged to compile and interpret the BF source code.
 
-> BrainFuck (often abbreviated in BF) it's an esoteric general-purpose programming language. It is not intended for practical use, but to challenge and amuse programmers. Here it is its simple semantic:
+> BrainFuck it's an esoteric general-purpose programming language. It is not intended for practical use, but to challenge and amuse programmers. Here it is its simple semantic:
 
 ">"	increment the data pointer by one (to point to the next cell to the right).
 
