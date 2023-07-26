@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Importing necessary JavaFX libraries -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="master-pane" stylesheets="@gui.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jfx.Controller">
+   
+   <top>
+
+       <!-- Menu Bar -->
+       <MenuBar prefHeight="25.0" prefWidth="600.0" stylesheets="@gui.css" BorderPane.alignment="CENTER">
+
+            <!-- FILE Section -->
+           <Menu text="File">
+
+               <!-- New File Menu Item -->
+               <MenuItem fx:id="newFile" mnemonicParsing="false" onAction="#newFile" text="New">
+                   <accelerator>
+                       <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                   </accelerator>
+               </MenuItem>
+
+               <!-- Open File Menu Item -->
+               <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#openFile" text="Open">
+                   <accelerator>
+                       <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                   </accelerator>
+               </MenuItem>
+
+               <!-- Save File Menu Item -->
+               <MenuItem fx:id="save" onAction="#save" text="Save">
+                   <accelerator>
+                       <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                   </accelerator>
+               </MenuItem>
+
+               <SeparatorMenuItem mnemonicParsing="false" />
+               <!-- Close Menu Item -->
+               <MenuItem id="close" mnemonicParsing="false" onAction="#exit" text="Close" />
+
+           </Menu>
+
+           <!-- EDIT Section -->
+           <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                   <Menu mnemonicParsing="false" text="Font...">
+                       <items>
+                           <!-- Font Size Options -->
+                           <CheckMenuItem fx:id="small" mnemonicParsing="false" onAction="#fontSize" text="Small" />
+                           <CheckMenuItem fx:id="default" mnemonicParsing="false" onAction="#fontSize" text="Medium" />
+                           <CheckMenuItem fx:id="large" mnemonicParsing="false" onAction="#fontSize" text="Large" />
+                       </items>
+                   </Menu>
+               </items>
+           </Menu>
+
+       </MenuBar>
+
+   </top>
+
+   <center>
+   
+      <VBox spacing="5">
+
+         <!-- Input TextArea -->
+         <TextArea fx:id="textArea" nodeOrientation="LEFT_TO_RIGHT" styleClass="editor-text" wrapText="true" VBox.vgrow="ALWAYS">
+            <effect>
+               <InnerShadow choke="0.46" color="#010103" height="19.4" radius="7.375" width="12.1" />
+            </effect>
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
+         </TextArea>
+
+         <HBox spacing="10">
+
+            <!-- Compile Button -->
+            <Button text="Compile" fx:id="compile" onAction="#compile" />
+
+            <!-- Run Button -->
+            <Button text="Run" fx:id="run" onAction="#run"/>
+
+            <Region HBox.hgrow="ALWAYS" />
+            <AnchorPane>
+                <!-- Compile and Run Button -->
+                <Button text="Compile and Run" fx:id="compilerun" onAction="#compileRun" AnchorPane.rightAnchor="0" />
+            </AnchorPane>
+        </HBox>
+
+         <!-- Output TextArea -->
+         <TextArea fx:id="outputTextArea" nodeOrientation="LEFT_TO_RIGHT" editable="false" wrapText="true" VBox.vgrow="ALWAYS" text="OUTPUT: " styleClass="output-area" />
+      </VBox>
+
+   </center>
+
+</BorderPane>
